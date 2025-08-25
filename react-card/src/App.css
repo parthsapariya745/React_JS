@@ -1,0 +1,210 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: #0a0a0a;
+  color: #ffffff;
+  min-height: 100vh;
+  width: 100%;
+}
+.card-box {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  padding: 24px;
+  max-width: 1400px;
+  margin: 0 auto;
+  background-color: #0a0a0a;
+  min-height: 100vh;
+  width: 100%;
+}
+.card {
+  background: linear-gradient(145deg, #1a1a1a, #222222);
+  border-radius: 16px;
+  padding: 0;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 4px 16px rgba(0, 0, 0, 0.2);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid #333333;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 8px 24px rgba(59, 130, 246, 0.1);
+  border-color: #3b82f6;
+}
+.img-box {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  background: linear-gradient(135deg, #111111, #1a1a1a);
+}
+.img-box img {
+  width: 100%;
+  height: 100%;  
+  object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.card:hover .img-box img {
+  transform: scale(1.1) rotate(1deg);
+}
+.content {
+  padding: 24px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.content h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.3;
+  letter-spacing: -0.025em;
+  background: linear-gradient(135deg, #ffffff, #e5e7eb);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.content .brand {
+  font-size: 12px;
+  color: #888888;
+  margin: 0;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 4px 12px;
+  background-color: #2a2a2a;
+  border-radius: 20px;
+  display: inline-block;
+  width: fit-content;
+  border: 1px solid #444444;
+  margin-top: 7px;
+}
+.content .price {
+  font-size: 22px;
+  font-weight: 700;
+  color: #10b981;
+  margin: 8px 0;
+  text-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+.content .desc {
+  font-size: 15px;
+  color: #aaaaaa;
+  line-height: 1.6;
+  margin: 0;
+  font-weight: 400;
+  flex: 1;
+  opacity: 0.9;
+}
+.content .rating {
+  font-size: 16px;
+  color: #fbbf24;
+  margin: 8px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  text-shadow: 0 0 10px rgba(251, 191, 36, 0.3);
+}
+.content .return {
+  font-size: 13px;
+  color: #a78bfa;
+  background: linear-gradient(135deg, #2a2a2a, #333333);
+  padding: 10px 16px;
+  border-radius: 8px;
+  margin: 8px 0;
+  font-weight: 600;
+  text-align: center;
+  border: 1px solid #555555;
+  box-shadow: inset 0 1px 2px rgba(167, 139, 250, 0.1);
+}
+.btn {
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6, #ec4899);
+  color: #ffffff;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  margin-top: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+}
+.btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+.btn:hover::before {
+  left: 100%;
+}
+.btn:hover {
+  background: linear-gradient(135deg, #2563eb, #7c3aed, #db2777);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+}
+.btn:active {
+  transform: translateY(0);
+}
+@media (max-width: 768px) {
+  .card-box {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    padding: 16px;
+    gap: 20px;
+  }
+  .img-box {
+    height: 200px;
+  }
+  .content {
+    padding: 20px;
+  }
+  .content h2 {
+    font-size: 20px;
+  }
+  .content .price {
+    font-size: 24px;
+  }
+}
+@media (max-width: 480px) {
+  .card-box {
+    grid-template-columns: 1fr;
+    padding: 12px;
+    gap: 16px;
+  }
+  .img-box {
+    height: 180px;
+  }
+  .content {
+    padding: 16px;
+  }
+  .content h2 {
+    font-size: 18px;
+  }
+  .content .price {
+    font-size: 22px;
+  }
+  .btn {
+    padding: 12px 24px;
+    font-size: 14px;
+  }
+}
